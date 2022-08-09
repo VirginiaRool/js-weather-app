@@ -1,0 +1,38 @@
+.container {
+  max-width: 540px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #a4a1e2;
+  border-radius: 5px;
+  background-color: #a4a1e2;
+  font-family: "Poppins", sans-serif;
+  color: #362a67;
+  font-weight: bold;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.city-name {
+  padding-top: 20px;
+}
+
+.today-forecast {
+  color: ;
+}
+
+.today-icon {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
