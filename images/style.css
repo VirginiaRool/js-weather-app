@@ -1,18 +1,12 @@
-.container {
-  max-width: 540px;
+.container.container-weather {
+  max-width: 410px;
   margin: 30px auto;
   padding: 20px;
   border: 1px solid #a4a1e2;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #a4a1e2;
   font-family: "Poppins", sans-serif;
   color: #362a67;
-  font-weight: bold;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
 }
 
 li {
@@ -22,11 +16,16 @@ li {
 }
 
 .city-name {
-  padding-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
-.today-forecast {
-  color: ;
+ul.today-data {
+  padding-top: 0px;
+  padding-bottom: 10px;
+  padding-left: 0;
+  margin-bottom: 0;
+  font-weight: 500;
 }
 
 .today-icon {
@@ -35,4 +34,35 @@ li {
   max-width: 50%;
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+.today-temperature {
+  margin-bottom: 20px;
+  font-weight: 700px;
+  font-size: 45px;
+}
+
+ul.today-description {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 0;
+  font-weight: 500;
+}
+
+.week-forecast {
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  opacity: 0.5;
+}
+
+a {
+  color: purple;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: none;
 }
