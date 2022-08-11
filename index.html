@@ -26,7 +26,7 @@
   </head>
   <body>
     <div class="container container-weather text-center">
-      <h2 class="city-name">New York, NY, USA</h2>
+      <h2 class="city-name">London, UK</h2>
       <ul class="today-data">
         <li>
           <span class="day">Monday,</span>
@@ -37,7 +37,10 @@
           <img class="today-icon" src="images\shower_rain.svg" alt="Rain" />
         </li>
       </ul>
-      <h1 class="today-temperature">15 °C | °F</h1>
+      <div class="today-temperature">
+        <span class="tempNumber">15</span>
+        <span class="tempUnit">°C | °F</span>
+      </div>
       <ul class="today-description">
         <li>
           <span class="min-temp">Min:18 / </span>
@@ -81,11 +84,11 @@
           <li>TUE</li>
         </div>
       </div>
-      <small>
+      <div class="footer">
         <a href="https://github.com/VirginiaRool/js-weather-app" target="_blank"
           >Open source code </a
         >by Virginia Romero
-      </small>
+      </div>
     </div>
     <script src="src\script.js"></script>
   </body>
