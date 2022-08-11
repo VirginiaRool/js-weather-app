@@ -1,5 +1,6 @@
 .container.container-weather {
   max-width: 410px;
+  min-width: 260px;
   margin: 30px auto;
   padding: 20px;
   border: 1px solid #a4a1e2;
@@ -38,8 +39,16 @@ ul.today-data {
 
 .today-temperature {
   margin-bottom: 20px;
+}
+
+.tempNumber {
   font-weight: 700px;
   font-size: 45px;
+}
+
+.tempUnit {
+  font-weight: 700px;
+  font-size: 30px;
 }
 
 ul.today-description {
@@ -54,15 +63,9 @@ ul.today-description {
   font-weight: 500;
   padding-top: 20px;
   padding-bottom: 30px;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
-a {
-  color: purple;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: grey;
-  text-decoration: none;
+.footer {
+  font-size: 12px;
 }
