@@ -17,28 +17,31 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+
   </head>
   <body>
     <div class="container container-weather text-center">
-      <h2 class="city-name">London, UK</h2>
+      <div class="cityAndCountry">
+        <span id="city"></span>
+        <span id="country"></span>
+      </div>
+
       <ul class="today-data">
         <li>
           <span class="day">Monday,</span>
           <span class="hour">14:50,</span>
-          <span class="weather-description">Clear</span>
+          <span class="weather-description" id="description">Clear</span>
         </li>
         <li>
           <img class="today-icon" src="images\shower_rain.svg" alt="Rain" />
         </li>
       </ul>
       <div class="today-temperature">
-        <span class="tempNumber">15</span>
+        <span class="tempNumber" id="temperature"></span>
         <span class="tempUnit">°C | °F</span>
       </div>
       <ul class="today-description">
