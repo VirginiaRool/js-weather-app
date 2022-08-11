@@ -6,8 +6,13 @@
   border: 1px solid #a4a1e2;
   border-radius: 10px;
   background-color: #a4a1e2;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #362a67;
+}
+
+.cityAndCountry {
+  font-weight: bold;
+  font-size: 30px;
 }
 
 li {
@@ -38,12 +43,12 @@ ul.today-data {
 }
 
 .today-temperature {
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
 .tempNumber {
-  font-weight: 700px;
-  font-size: 45px;
+  font-size: 60px;
 }
 
 .tempUnit {
