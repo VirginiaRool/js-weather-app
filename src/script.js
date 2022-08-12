@@ -1,13 +1,25 @@
 function displayTemperature(response) {
   console.log(response);
-  let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  let countryElement = document.querySelector("#country");
+  let descriptionElement = document.querySelector("#description");
+  let temperatureElement = document.querySelector("#temperature");
+  let minTempElement = document.querySelector("#min-temp");
+  let maxTempElement = document.querySelector("#max-temp");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
   cityElement.innerHTML = response.data.name;
+  countryElement.innerHTML = response.data.sys.country;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  minTempElement.innerHTML = Math.round(response.data.main.temp_min);
+  maxTempElement.innerHTML = Math.round(response.data.main.temp_max);
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = response.data.wind.speed;
 }
 
 let apiKey = "c7cd54d7f273febb5e037c3f52d9dfdb";
-let city = "London,uk";
+let city = "Los Angeles";
 let units = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
