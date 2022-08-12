@@ -21,6 +21,10 @@ li {
   padding: 0;
 }
 
+li::first-letter {
+  text-transform: capitalize;
+}
+
 .city-name {
   margin-top: 10px;
   margin-bottom: 0;
