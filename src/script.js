@@ -36,7 +36,10 @@ function displayTemperature(response) {
   cityElement.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+  celsiusTemperature = Math.round(response.data.main.temp);
+
+  temperatureElement.innerHTML = celsiusTemperature;
   minTempElement.innerHTML = Math.round(response.data.main.temp_min);
   maxTempElement.innerHTML = Math.round(response.data.main.temp_max);
   humidityElement.innerHTML = response.data.main.humidity;
@@ -65,12 +68,23 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-console.log(city);
-
-function displayFahrenheitTemperature(event) {
+function convertToFahrenheit(event) {
   event.preventDefault();
-  return;
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = celsiusTemperature;
+}
+
+let celsiusTemperature = null;
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
