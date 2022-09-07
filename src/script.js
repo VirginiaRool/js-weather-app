@@ -22,6 +22,28 @@ function formatDate(timeStamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  forecastElement.innerHTML = `
+      <div class="row">
+        <div class="col-3">
+          <li>TUE</li>
+          <img
+            src="http://openweathermap.org/img/wn/50d@2x.png"
+            alt=""
+            width="40"
+            image
+          />
+          <li>
+            <span class="forecast-max">32/</span>
+            <span class="forecast-min">15</span>
+          </li>
+        </div>
+      </div>
+    `;
+}
+
 function displayTemperature(response) {
   let cityElement = document.querySelector("#city");
   let countryElement = document.querySelector("#country");
@@ -82,6 +104,8 @@ function convertToCelsius(event) {
 }
 
 let celsiusTemperature = null;
+
+displayForecast();
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
