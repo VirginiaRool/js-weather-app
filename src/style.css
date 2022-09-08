@@ -48,17 +48,17 @@ ul.today-data {
 }
 
 .today-temperature {
-  font-weight: bold;
   margin-bottom: 20px;
 }
 
 .tempNumber {
   font-size: 60px;
+  font-weight: bold;
 }
 
 .tempUnit {
   font-weight: 700px;
-  font-size: 30px;
+  font-size: 26px;
 }
 
 ul.today-description {
