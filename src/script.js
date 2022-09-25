@@ -33,9 +33,9 @@ function displayForecast(response) {
   let dailyForecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row justify-content-center">`;
   dailyForecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `      
@@ -56,15 +56,13 @@ function displayForecast(response) {
               forecastDay.temp.min
             )}°</span>
           </li>
-        </div>         
-            
-      
-    `;
+        </div>                  
+      `;
     }
-    forecastHTML = forecastHTML + `</div>`;
-
-    forecastElement.innerHTML = forecastHTML;
   });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates) {

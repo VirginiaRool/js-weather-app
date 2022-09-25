@@ -1,8 +1,8 @@
 .container.container-weather {
   max-width: 410px;
   min-width: 260px;
-  margin: 30px auto;
-  padding: 20px;
+  margin: 15px auto;
+  padding: 15px;
   border: 1px solid #a4a1e2;
   border-radius: 10px;
   background-color: #a4a1e2;
@@ -33,7 +33,7 @@ li::first-letter {
 
 ul.today-data {
   padding-top: 0px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   padding-left: 0;
   margin-bottom: 0;
   font-weight: 500;
@@ -43,12 +43,12 @@ ul.today-data {
   display: block;
   margin: 0 auto;
   max-width: 50%;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .today-temperature {
-  margin-bottom: 20px;
+  margin: 0px;
 }
 
 .tempNumber {
@@ -71,7 +71,7 @@ ul.today-description {
 .week-forecast {
   font-size: 14px;
   font-weight: 500;
-  padding-top: 40px;
+  padding-top: 26px;
   padding-bottom: 30px;
   opacity: 0.8;
 }
