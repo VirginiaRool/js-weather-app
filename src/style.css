@@ -56,9 +56,10 @@ ul.today-data {
   font-weight: bold;
 }
 
-.tempUnit {
-  font-weight: 700px;
+.tempUnit a {
   font-size: 26px;
+  text-decoration: none;
+  color: #362a67;
 }
 
 ul.today-description {

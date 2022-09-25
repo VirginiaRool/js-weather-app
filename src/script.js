@@ -1,3 +1,6 @@
+let apiKey = "c7cd54d7f273febb5e037c3f52d9dfdb";
+let units = "metric";
+
 function formatDate(timeStamp) {
   let date = new Date(timeStamp);
   let days = [
@@ -66,8 +69,6 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "c7cd54d7f273febb5e037c3f52d9dfdb";
-  let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unit=${units}`;
 
   axios.get(apiUrl).then(displayForecast);
@@ -104,9 +105,20 @@ function displayTemperature(response) {
   getForecast(response.data.coord);
 }
 
+function getPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function getCurrentLocation() {
+  navigator.geolocation.getCurrentPosition(getPosition);
+}
+getCurrentLocation();
+
 function search(city) {
-  let apiKey = "c7cd54d7f273febb5e037c3f52d9dfdb";
-  let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(displayTemperature);
