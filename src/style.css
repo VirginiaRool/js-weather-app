@@ -56,10 +56,13 @@ ul.today-data {
   font-weight: bold;
 }
 
-.tempUnit a {
-  font-size: 26px;
+.tempUnit a,
+.tempUnitDivision {
+  font-size: 24px;
   text-decoration: none;
   color: #362a67;
+  position: relative;
+  top: -24px;
 }
 
 ul.today-description {
@@ -77,8 +80,16 @@ ul.today-description {
   opacity: 0.8;
 }
 
+.forecast-min {
+  opacity: 0.6;
+}
+
+.footer a,
 .footer {
   font-size: 13px;
   font-weight: 500;
-  color: #0a58ca;
+}
+
+.footer a {
+  color: #962071;
 }
