@@ -60,9 +60,20 @@ ul.today-data {
 .tempUnitDivision {
   font-size: 24px;
   text-decoration: none;
-  color: #362a67;
+  color: grey;
   position: relative;
   top: -24px;
+}
+
+.tempUnit .active {
+  cursor: default;
+  color: #362a67;
+  font-weight: bold;
+}
+
+.tempUnit a:hover {
+  color: #362a67;
+  text-decoration: none;
 }
 
 ul.today-description {

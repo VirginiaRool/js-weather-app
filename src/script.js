@@ -69,7 +69,7 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unit=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(displayForecast);
 }
@@ -118,7 +118,7 @@ function getCurrentLocation() {
 }
 getCurrentLocation();
 
-function search(city) {
+function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(displayTemperature);
@@ -126,8 +126,8 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let cityInputElement = document.querySelector("#city-input");
-  search(cityInputElement.value);
+  let cityInputValue = getCityInputValue();
+  searchCity(cityInputValue);
 }
 
 let form = document.querySelector("#search-form");
@@ -135,15 +135,39 @@ form.addEventListener("submit", handleSubmit);
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  if (units === "metric") {
+    units = "imperial";
+    updateWeatherInfo();
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+  }
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = celsiusTemperature;
+  if (units === "imperial") {
+    units = "metric";
+    updateWeatherInfo();
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+  }
+}
+
+function updateWeatherInfo() {
+  let cityInputValue = getCityInputValue();
+  if (cityInputValue) {
+    //if revisa una condición que sea true, si le pasas una variable será true, si la variable tiene un valor o sea no es "undefined" o "null"
+    searchCity(cityInputValue);
+  } else {
+    // else se ejecuta cuando la condición sea false, si le  pasas una variable será false si la variable es "undefined" o "null"
+    getCurrentLocation();
+  }
+}
+
+function getCityInputValue() {
+  let searchCityInput = document.querySelector("#city-input");
+  let cityInputValue = searchCityInput.value;
+  return cityInputValue;
 }
 
 let celsiusTemperature = null;
